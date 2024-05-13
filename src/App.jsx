@@ -68,12 +68,56 @@ const reducer = (state, action) => {
         type: "Sound",
         toggleText: state.toggleText
       };
+    case "MUZEN":
+      return {
+        url: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/0/0e/Muzan_Kibutsuji_Full_Body_%28Anime%29.png",
+        name: "Kibutsuji Muzen",
+        type: "Demon King (Progenitor)",
+        toggleText: state.toggleText
+      };
+    case "UM1":
+      return {
+        url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/93f37be2-d346-40d1-ad11-3be570416e52/dewpspa-685640cc-b88f-45cf-b2f7-93a13d523abb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkzZjM3YmUyLWQzNDYtNDBkMS1hZDExLTNiZTU3MDQxNmU1MlwvZGV3cHNwYS02ODU2NDBjYy1iODhmLTQ1Y2YtYjJmNy05M2ExM2Q1MjNhYmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ksGkcDpEZW_PI6IdC4TMiUmtDYwm13ZxqmbqXvKODVY",
+        name: "Kokushibo",
+        type: "Upper Moon One",
+        toggleText: state.toggleText
+      };
+    case "UM2":
+      return {
+        url: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/5/58/Doma_colored_body_3.png",
+        name: "Doma",
+        type: "Upper Moon Two",
+        toggleText: state.toggleText
+      };
+    case "UM3":
+      return {
+        url: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/5/5c/Akaza_Full_Body_%28Anime%29.png",
+        name: "Akaza",
+        type: "Upper Moon Three",
+        toggleText: state.toggleText
+      };
+    case "UM4":
+      return {
+        url: "https://static.wikia.nocookie.net/versus-connections/images/b/bf/Download-demon-slayer-hantengu-karaku-tengu-cursor-custom-cursor-png.png",
+        name: "Hantengu",
+        type: "Upper Moon Four",
+        toggleText: state.toggleText
+      };
+    case "UM5":
+      return {
+        url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/60c131ad-0b26-4885-933f-8dc9f257f2dd/dgdhdfh-1fa81d5c-e7eb-4f02-a535-9d0942c49fd9.png/v1/fit/w_698,h_1145/gyokko___demon_slayer____by_1684i64853thfbc_dgdhdfh-375w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTE0NSIsInBhdGgiOiJcL2ZcLzYwYzEzMWFkLTBiMjYtNDg4NS05MzNmLThkYzlmMjU3ZjJkZFwvZGdkaGRmaC0xZmE4MWQ1Yy1lN2ViLTRmMDItYTUzNS05ZDA5NDJjNDlmZDkucG5nIiwid2lkdGgiOiI8PTY5OCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.0QjHrfqFZyJmAnkP6TN9oFtq1VXZmFyzSTFna7QdDCQ",
+        name: "Gyokko",
+        type: "Upper Moon Five",
+        toggleText: state.toggleText
+      };
+    case "UM6":
+      return {
+        url: "https://64.media.tumblr.com/695b21b90f44285039737310b15b0641/65f57f62e5a05fd0-85/s1280x1920/0a310820cfb62c2ebcdff4797d88f3df58fb7097.png",
+        name: "Daki & Gyutaro",
+        type: "Upper Moon Six",
+        toggleText: state.toggleText
+      };
       
-    // case "toggleText":
-    //   return { 
-    //     url: state.url,
-    //     toggleText: !state.toggleText 
-    //   }
     default:
       return state;
   }
@@ -94,11 +138,11 @@ function App() {
   return (
     <div className="App">
       <div className="hashira">
-        <img src={state.url} alt={state.name} />
+        <img src={state.url} alt={state.name} className="graphic"/>
         <h4>{state.name}</h4>
         <h4>{state.type}</h4>
       </div>
-        <div>Current Hashira</div>
+        <div>Hashira</div>
         <div>
           <button onClick={()=>{
             dispatch({type:"WATER"})
@@ -129,10 +173,30 @@ function App() {
           }}> Sound </button>
         </div>
         <hr />
-        {/* <button onClick={()=>{
-          dispatch({type: "toggleText"})
-        }}></button> */}
-        {/* <div>{state.toggleText && <p> This Text is Visible</p>}</div> */}
+        <div>Demon King</div>
+        <button onClick={()=>{
+            dispatch({type:"MUZEN"})
+          }}> MJ </button>
+
+        <div>Upper Moons</div>
+        <button onClick={()=>{
+            dispatch({type:"UM1"})
+          }}> One </button>
+        <button onClick={()=>{
+            dispatch({type:"UM2"})
+          }}> Two </button>
+        <button onClick={()=>{
+            dispatch({type:"UM3"})
+          }}> Three </button>
+        <button onClick={()=>{
+            dispatch({type:"UM4"})
+          }}> Four </button>
+        <button onClick={()=>{
+            dispatch({type:"UM5"})
+          }}> Five </button>
+        <button onClick={()=>{
+            dispatch({type:"UM6"})
+          }}> Six </button>
     </div>
   );
 }
